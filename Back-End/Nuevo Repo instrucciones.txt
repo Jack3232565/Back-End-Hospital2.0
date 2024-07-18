@@ -38,5 +38,5 @@ esta linea de codigo se encuentra en la carpeta config/db.py
 uvicorn app:app --reload
 
 
-** Si se instala nuevas dependencias genera nuevamente el archivo de requirements.txt
+** Se genera nuevamente el archivo de requirements.txt
 pip freeze > requirements.txt
