@@ -23,7 +23,7 @@ class Aprobaciones(Base):
     Personal_Medico_ID = Column(Integer)  # Añadido ForeignKey
     # Solicitud_id = Column(Integer, ForeignKey("solicitudes.id"))  # Añadido ForeignKey
     Solicitud_id = Column(Integer)  # Añadido ForeignKey
-    Comentario = Column(String, index=True)
+    Comentario = Column(String(500))
     Estatus = Column(Enum(Estatus))
     Tipo = Column(Enum(Tipo))
     Fecha_Registro = Column(DateTime)

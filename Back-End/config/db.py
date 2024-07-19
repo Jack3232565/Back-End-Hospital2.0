@@ -8,16 +8,22 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
+from dotenv import load_dotenv
+import os
+
+# Cargar las variables de entorno desde el archivo .env
+load_dotenv()
+
 #se esta entrando en la base de datos con usuario: root y contraseña: 1234, en el puerto de conexion de MySQL 3306
-SQLALCHEMY_DATABSE_URL = "mysql+pymysql://root:1234@localhost:3306/test"
+SQLALCHEMY_DATABASE_URL = os.getenv("SQLALCHEMY_DATABASE_URL")
 
 
 
 
 #Crear el motor de base de datos
-engine = create_engine(SQLALCHEMY_DATABSE_URL)
+engine = create_engine(SQLALCHEMY_DATABASE_URL)
 #diferencia en la base de datos en el modelo database.py
-#engine = create_engine(URL_DATABSE) 
+#engine = create_engine(URL_DATABSE)
 
 #Probar la conexión
 try:
